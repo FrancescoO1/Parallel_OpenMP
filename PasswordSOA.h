@@ -7,7 +7,7 @@
 
 class PasswordSOA {
 private:
-    std::vector<char> chars[8]; // 8 colonne
+    std::vector<char> chars[8];
 
 public:
     void loadFromFile(const std::string& path);
@@ -16,4 +16,4 @@ public:
 };
 
 
-#endif //PASSWORDSOA_H
+#endif

@@ -14,7 +14,7 @@ std::string decryptDESSequential(const std::string& encrypted, const std::string
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    // Caricamento dati in memoria in base alla modalità
+
     if (mode == "aos") {
         aos.loadFromFile(dict_path);
     } else if (mode == "soa") {
@@ -25,7 +25,7 @@ std::string decryptDESSequential(const std::string& encrypted, const std::string
         return "";
     }
 
-    // Ricerca sequenziale
+
     int count = 0;
     if (mode == "aos") {
         count = aos.size();

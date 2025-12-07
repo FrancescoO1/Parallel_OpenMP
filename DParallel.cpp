@@ -41,13 +41,13 @@ std::string decryptDESParallel(const std::string& encrypted, const std::string& 
 
         if (mode == "aos") {
             #pragma omp for schedule(dynamic, 1000) nowait
-            for (int i = 0; i < count; ++i) {  // ✅ Loop semplice senza condizioni extra
-                // Check periodico ogni 1024 iterazioni
+            for (int i = 0; i < count; ++i) {
+
                 if ((i & 0x3FF) == 0) {
                     local_found = found.load(std::memory_order_relaxed);
                 }
 
-                if (local_found) continue;  // ✅ Continue è permesso
+                if (local_found) continue;
 
                 char* pw = aos.get(i);
                 const char* result = crypt_r(pw, salt.c_str(), &data);
@@ -65,12 +65,12 @@ std::string decryptDESParallel(const std::string& encrypted, const std::string& 
             }
         } else if (mode == "soa") {
             #pragma omp for schedule(dynamic, 1000) nowait
-            for (int i = 0; i < count; ++i) {  // ✅ Loop semplice
+            for (int i = 0; i < count; ++i) {
                 if ((i & 0x3FF) == 0) {
                     local_found = found.load(std::memory_order_relaxed);
                 }
 
-                if (local_found) continue;  // ✅ Continue è permesso
+                if (local_found) continue;
 
                 char* pw = soa.get(i);
                 const char* result = crypt_r(pw, salt.c_str(), &data);

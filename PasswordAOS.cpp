@@ -1,5 +1,5 @@
 
-/*
+
 
 //CON FILTRAGGIO PW LUNGHE 8
 #include "PasswordAOS.h"
@@ -26,9 +26,11 @@ int PasswordAOS::size() const {
     return data.size();
 }
 
-*/
 
 
+
+
+/*
 //SENZA FILTRAGGIO PW
 #include "PasswordAOS.h"
 #include <fstream>
@@ -57,3 +59,4 @@ char* PasswordAOS::get(int i) {
 int PasswordAOS::size() const {
     return data.size();
 }
+*/

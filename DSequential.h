@@ -4,7 +4,6 @@
 #pragma once
 #include <string>
 
-// Funzione globale per la versione sequenziale con modalità aos/soa
 std::string decryptDESSequential(
     const std::string& encrypted,
     const std::string& salt,
@@ -13,4 +12,4 @@ std::string decryptDESSequential(
     double& throughput,
     const std::string& mode);
 
-#endif // D_SEQUENTIAL_H
+#endif

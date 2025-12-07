@@ -4,7 +4,6 @@
 #pragma once
 #include <string>
 
-// Funzione globale per il brute-force parallelo con modalità aos/soa
 std::string decryptDESParallel(
     const std::string& encrypted,
     const std::string& salt,
@@ -14,4 +13,4 @@ std::string decryptDESParallel(
     double& throughput,
     const std::string& mode);
 
-#endif //DPARALLEL_H
+#endif

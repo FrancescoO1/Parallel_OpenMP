@@ -6,7 +6,7 @@
 #include <string>
 
 struct PasswordStruct {
-    char value[9]; // 8 caratteri + '\0'
+    char value[9];
 };
 
 class PasswordAOS {
@@ -20,4 +20,4 @@ public:
 };
 
 
-#endif //PASSWORDAOS_H
+#endif

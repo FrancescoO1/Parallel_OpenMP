@@ -1,5 +1,5 @@
 
-/*
+
 
 
 //CON FILTRAGGIO PW LUNGHE 8 ho 800k o 2.5M pw da testare
@@ -30,7 +30,7 @@ int PasswordSOA::size() const {
     return chars[0].size(); // tutte le colonne hanno stessa dimensione
 }
 
-*/
+
 
 //SENZA FILTRAGGIO PW, ho 14M o 32M di pw da testare
 /* ora se ho pw di wuesto tipop faccio:
@@ -41,7 +41,7 @@ rockyou.txt contiene:
 "password123456"   → Caricata come "password" (troncata)
 */
 
-
+/*
 
 #include "PasswordSOA.h"
 #include <fstream>
@@ -80,3 +80,4 @@ char* PasswordSOA::get(int i) {
 int PasswordSOA::size() const {
     return chars[0].size(); // tutte le colonne hanno stessa dimensione
 }
+*/
