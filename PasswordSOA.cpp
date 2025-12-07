@@ -51,16 +51,13 @@ void PasswordSOA::loadFromFile(const std::string& path) {
     std::ifstream file(path);
     std::string line;
     while (std::getline(file, line)) {
-        // RIMOSSO IL FILTRO: carica tutte le password indipendentemente dalla lunghezza
         if (!line.empty()) {  // Solo controllo che non sia vuota
             size_t len = std::min(line.length(), static_cast<size_t>(8));
 
-            // Aggiungi caratteri fino alla lunghezza effettiva
             for (size_t i = 0; i < len; ++i) {
                 chars[i].push_back(line[i]);
             }
 
-            // Riempi con '\0' per le posizioni rimanenti se la password è più corta di 8
             for (size_t i = len; i < 8; ++i) {
                 chars[i].push_back('\0');
             }

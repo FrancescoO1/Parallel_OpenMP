@@ -20,15 +20,15 @@ int main() {
     std::cout << "\n" << std::string(60, '=') << std::endl;
     std::cout << "  BENCHMARK AOS vs SOA - PASSWORD DECRYPTION" << std::endl;
     std::cout << std::string(60, '=') << std::endl;
-    std::cout << "🔍 Password: " << password << " | Salt: " << salt << std::endl;
-    std::cout << "🔗 Hash DES: " << hash << std::endl;
-    std::cout << "🔁 Run per test: " << NUM_RUNS << std::endl;
+    std::cout << " Password: " << password << " | Salt: " << salt << std::endl;
+    std::cout << " Hash DES: " << hash << std::endl;
+    std::cout << " Run per test: " << NUM_RUNS << std::endl;
     std::cout << std::string(60, '-') << std::endl;
 
     std::vector<double> times_seq_aos(NUM_RUNS);
     std::vector<double> times_seq_soa(NUM_RUNS);
 
-    std::cout << "\n📊 Eseguendo test sequenziali e paralleli..." << std::flush;
+    std::cout << "\n Eseguendo test sequenziali e paralleli..." << std::flush;
 
     for (int run = 0; run < NUM_RUNS; ++run) {
         double t_seq_aos, thr_seq_aos;
@@ -53,7 +53,7 @@ int main() {
     decryptDESSequential(hash, salt, dict_path, temp_time, temp_thr, "soa");
     double throughput_seq_soa = temp_thr * temp_time / mean_seq_soa;
 
-    std::cout << "\n📈 RISULTATI SEQUENZIALI:" << std::endl;
+    std::cout << "\n RISULTATI SEQUENZIALI:" << std::endl;
     std::cout << "┌─────────┬─────────────────┬──────────────────┐" << std::endl;
     std::cout << "│  TIPO   │      TEMPO      │    THROUGHPUT    │" << std::endl;
     std::cout << "├─────────┼─────────────────┼──────────────────┤" << std::endl;
@@ -97,7 +97,7 @@ int main() {
                   << stdev_seq_aos << "," << stdev_seq_soa << "\n";
     line_chart_csv << "1,1.0,1.0,1.0\n";
 
-    std::cout << "\n📊 RISULTATI PARALLELI:" << std::endl;
+    std::cout << "\n RISULTATI PARALLELI:" << std::endl;
     std::cout << "┌─────────┬─────────┬─────────────────┬──────────────────┬─────────────┐" << std::endl;
     std::cout << "│ THREAD  │  TIPO   │      TEMPO      │    THROUGHPUT    │   SPEEDUP   │" << std::endl;
     std::cout << "├─────────┼─────────┼─────────────────┼──────────────────┼─────────────┤" << std::endl;
@@ -190,14 +190,14 @@ int main() {
     overhead_csv.close();
 
     std::cout << "\n" << std::string(60, '=') << std::endl;
-    std::cout << "✅ BENCHMARK COMPLETATO" << std::endl;
-    std::cout << "📁 risultati_scaling.csv - Dati dettagliati di tutti i run" << std::endl;
-    std::cout << "📁 riepilogo_medie.csv - Statistiche riassuntive" << std::endl;
-    std::cout << "📊 bar_chart_tempi.csv - Dati per Bar Chart (Tempi)" << std::endl;
-    std::cout << "📈 line_chart_speedup.csv - Dati per Line Chart (Speedup)" << std::endl;
-    std::cout << "📊 throughput_chart.csv - Throughput assoluto" << std::endl;
-    std::cout << "📊 variability_chart.csv - Variabilità misurazioni" << std::endl;
-    std::cout << "📊 overhead_chart.csv - Overhead parallelizzazione" << std::endl;
+    std::cout << " BENCHMARK COMPLETATO" << std::endl;
+    std::cout << " risultati_scaling.csv - Dati dettagliati di tutti i run" << std::endl;
+    std::cout << " riepilogo_medie.csv - Statistiche riassuntive" << std::endl;
+    std::cout << " bar_chart_tempi.csv - Dati per Bar Chart (Tempi)" << std::endl;
+    std::cout << " line_chart_speedup.csv - Dati per Line Chart (Speedup)" << std::endl;
+    std::cout << " throughput_chart.csv - Throughput assoluto" << std::endl;
+    std::cout << " variability_chart.csv - Variabilità misurazioni" << std::endl;
+    std::cout << " overhead_chart.csv - Overhead parallelizzazione" << std::endl;
     std::cout << std::string(60, '=') << std::endl;
 
     return 0;
