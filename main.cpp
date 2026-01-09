@@ -65,14 +65,14 @@ int main() {
               << throughput_seq_soa << " pwd/s│" << std::endl;
     std::cout << "└─────────┴─────────────────┴──────────────────┘" << std::endl;
 
-    std::ofstream csv("risultati_scaling.csv");
-    std::ofstream summary("riepilogo_medie.csv");
-    std::ofstream bar_chart_csv("bar_chart_tempi.csv");
-    std::ofstream line_chart_csv("line_chart_speedup.csv");
-
-    std::ofstream throughput_csv("throughput_chart.csv");
-    std::ofstream variability_csv("variability_chart.csv");
-    std::ofstream overhead_csv("overhead_chart.csv");
+    //grafici:
+    std::ofstream csv("../grafici/risultati_scaling.csv");
+    std::ofstream summary("../grafici/riepilogo_medie.csv");
+    std::ofstream bar_chart_csv("../grafici/bar_chart_tempi.csv");
+    std::ofstream line_chart_csv("../grafici/line_chart_speedup.csv");
+    std::ofstream throughput_csv("../grafici/throughput_chart.csv");
+    std::ofstream variability_csv("../grafici/variability_chart.csv");
+    std::ofstream overhead_csv("../grafici/overhead_chart.csv");
 
     csv << "Thread,Tipo,Run,Tempo,Throughput,Speedup\n";
     summary << "Thread,Tempo_AOS_Media,Tempo_AOS_StdDev,Throughput_AOS,Speedup_AOS,"

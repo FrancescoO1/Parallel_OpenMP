@@ -27,7 +27,7 @@ char* PasswordSOA::get(int i) {
 }
 
 int PasswordSOA::size() const {
-    return chars[0].size(); // tutte le colonne hanno stessa dimensione
+    return chars[0].size(); 
 }
 
 
