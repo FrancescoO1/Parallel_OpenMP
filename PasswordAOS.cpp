@@ -1,7 +1,3 @@
-
-
-
-//CON FILTRAGGIO PW LUNGHE 8
 #include "PasswordAOS.h"
 #include <fstream>
 #include <cstring>
@@ -25,36 +21,3 @@ char* PasswordAOS::get(int i) {
 int PasswordAOS::size() const {
     return data.size();
 }
-
-
-
-
-
-/*
-//SENZA FILTRAGGIO PW
-#include "PasswordAOS.h"
-#include <fstream>
-#include <cstring>
-
-void PasswordAOS::loadFromFile(const std::string& path) {
-    std::ifstream file(path);
-    std::string line;
-    while (std::getline(file, line)) {
-        if (!line.empty()) {  // Solo controllo che non sia vuota
-            PasswordStruct p;
-            size_t len = std::min(line.length(), static_cast<size_t>(8));
-            strncpy(p.value, line.c_str(), len);
-            p.value[len] = '\0';  // Null-terminate sempre
-            data.push_back(p);
-        }
-    }
-}
-
-char* PasswordAOS::get(int i) {
-    return data[i].value;
-}
-
-int PasswordAOS::size() const {
-    return data.size();
-}
-*/
